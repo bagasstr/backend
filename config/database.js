@@ -1,4 +1,6 @@
+"use strict";
 import { Sequelize } from "sequelize";
+import mysql2 from "mysql2";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -9,8 +11,7 @@ const koneksi = new Sequelize(
   {
     host: process.env.DB_HOST,
     dialect: "mysql",
-    // dialectModule: "mysql2",
-    dialectOptions: "mysql2",
+    dialectModule: mysql2,
   }
 );
 koneksi
