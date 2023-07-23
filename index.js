@@ -6,9 +6,9 @@ import productRoutes from "./routes/productRoutes.js";
 const app = express();
 const port = process.env.DB_PORT || 5050;
 
-(async () => {
-  await Product.sync();
-})();
+// (async () => {
+//   await Product.sync();
+// })();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
