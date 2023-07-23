@@ -2,6 +2,8 @@ import express from "express";
 // import koneksi from "./config/database.js";
 // import Product from "./models/productModels.js";
 import productRoutes from "./routes/productRoutes.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 5050;
