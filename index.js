@@ -1,6 +1,6 @@
 import express from "express";
-import koneksi from "./config/database.js";
-import Product from "./models/productModels.js";
+// import koneksi from "./config/database.js";
+// import Product from "./models/productModels.js";
 import productRoutes from "./routes/productRoutes.js";
 
 const app = express();
@@ -19,4 +19,4 @@ app.use(express.json());
 
 app.use("/", productRoutes);
 
-app.listen(3306, () => console.log(`Server running on `));
+app.listen(3306, () => console.log(`Server running on ${port}`));

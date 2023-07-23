@@ -1,4 +1,4 @@
-POST https://backend-ten-xi.vercel.app/api/product
+POST http://localhost:3306/api/product
 Content-Type: application/json
 
 {
