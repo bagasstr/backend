@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 5050;
+const port = process.env.DB_PORT || 5050;
 
 (async () => {
   await Product.sync();
