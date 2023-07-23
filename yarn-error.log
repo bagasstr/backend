@@ -1,8 +1,8 @@
 Arguments: 
-  /home/bagas/.nvm/versions/node/v20.3.1/bin/node /home/bagas/.nvm/versions/node/v20.3.1/bin/yarn start
+  /home/bagas/.nvm/versions/node/v20.3.1/bin/node /home/bagas/.nvm/versions/node/v20.3.1/bin/yarn add sequlize@latest
 
 PATH: 
-  /home/bagas/.nvm/versions/node/v20.3.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+  /home/bagas/.console-ninja/.bin:/home/bagas/.nvm/versions/node/v20.3.1/bin:/app/bin:/usr/bin:/usr/lib/sdk/dotnet7/bin:/usr/lib/sdk/node18/bin
 
 Yarn version: 
   1.22.19
@@ -14,12 +14,17 @@ Platform:
   linux x64
 
 Trace: 
-  SyntaxError: /home/bagas/Documents/backend/package.json: Expected ',' or '}' after property value in JSON at position 150
-      at JSON.parse (<anonymous>)
-      at /home/bagas/.nvm/versions/node/v20.3.1/lib/node_modules/yarn/lib/cli.js:1629:59
-      at Generator.next (<anonymous>)
-      at step (/home/bagas/.nvm/versions/node/v20.3.1/lib/node_modules/yarn/lib/cli.js:310:30)
-      at /home/bagas/.nvm/versions/node/v20.3.1/lib/node_modules/yarn/lib/cli.js:321:13
+  Error: https://registry.yarnpkg.com/sequlize: Not found
+      at params.callback [as _callback] (/home/bagas/.nvm/versions/node/v20.3.1/lib/node_modules/yarn/lib/cli.js:66145:18)
+      at self.callback (/home/bagas/.nvm/versions/node/v20.3.1/lib/node_modules/yarn/lib/cli.js:140890:22)
+      at Request.emit (node:events:511:28)
+      at Request.<anonymous> (/home/bagas/.nvm/versions/node/v20.3.1/lib/node_modules/yarn/lib/cli.js:141862:10)
+      at Request.emit (node:events:511:28)
+      at IncomingMessage.<anonymous> (/home/bagas/.nvm/versions/node/v20.3.1/lib/node_modules/yarn/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:625:28)
+      at IncomingMessage.emit (node:events:523:35)
+      at endReadableNT (node:internal/streams/readable:1367:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
 
 npm manifest: 
   {
@@ -28,11 +33,18 @@ npm manifest:
     "version": "1.0.0",
     "main": "index.js",
     "license": "MIT",
-    "script": {"start":"nodemon index.js"}
+    "engines": {
+      "node": ">= 18.*"
+    },
+    "scripts": {
+      "start": "node index.js",
+      "dev": "nodemon index.js"
+    },
     "dependencies": {
       "cors": "^2.8.5",
+      "dotenv": "^16.3.1",
       "express": "^4.18.2",
-      "mysql2": "^3.4.2",
+      "mysql2": "^3.5.2",
       "nodemon": "^2.0.22",
       "sequelize": "^6.32.1"
     }
@@ -59,9 +71,9 @@ Lockfile:
     integrity sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==
   
   "@types/node@*":
-    version "20.3.2"
-    resolved "https://registry.yarnpkg.com/@types/node/-/node-20.3.2.tgz#fa6a90f2600e052a03c18b8cb3fd83dd4e599898"
-    integrity sha512-vOBLVQeCQfIcF/2Y7eKFTqrMnizK5lRNQ7ykML/5RuwVXVWxYkgwS7xbt4B6fKCUPgbSL5FSsjHQpaGQP/dQmw==
+    version "20.4.4"
+    resolved "https://registry.yarnpkg.com/@types/node/-/node-20.4.4.tgz#c79c7cc22c9d0e97a7944954c9e663bcbd92b0cb"
+    integrity sha512-CukZhumInROvLq3+b5gLev+vgpsIqC2D0deQr/yS1WnxvmYLlJXZpaQrQiseMY+6xusl79E04UjWoqyr+t1/Ew==
   
   "@types/validator@^13.7.17":
     version "13.7.17"
@@ -235,6 +247,11 @@ Lockfile:
     version "1.2.0"
     resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.2.0.tgz#4803735509ad8be552934c67df614f94e66fa015"
     integrity sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==
+  
+  dotenv@^16.3.1:
+    version "16.3.1"
+    resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.3.1.tgz#369034de7d7e5b120972693352a3bf112172cc3e"
+    integrity sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==
   
   dottie@^2.0.4:
     version "2.0.6"
@@ -551,10 +568,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
     integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
   
-  mysql2@^3.4.2:
-    version "3.4.2"
-    resolved "https://registry.yarnpkg.com/mysql2/-/mysql2-3.4.2.tgz#b48d78fe09cc4a85d03f7354be2816fa0931c7b9"
-    integrity sha512-hdGwVNke2TJE37gzVvzWRwCFKhrT+5Gy00FDgJUDYArapx3HcaYCJAQUbBiVnB491zLC6HVHNfsmweIotkCRtQ==
+  mysql2@^3.5.2:
+    version "3.5.2"
+    resolved "https://registry.yarnpkg.com/mysql2/-/mysql2-3.5.2.tgz#a06050e1514e9ac15711a8b883ffd51cb44b2dc8"
+    integrity sha512-cptobmhYkYeTBIFp2c0piw2+gElpioga1rUw5UidHvo8yaHijMZoo8A3zyBVoo/K71f7ZFvrShA9iMIy9dCzCA==
     dependencies:
       denque "^2.1.0"
       generate-function "^2.3.1"
@@ -700,14 +717,14 @@ Lockfile:
     integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
   
   semver@^5.7.1:
-    version "5.7.1"
-    resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"
-    integrity sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==
+    version "5.7.2"
+    resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.2.tgz#48d55db737c3287cd4835e17fa13feace1c41ef8"
+    integrity sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==
   
   semver@^7.5.1:
-    version "7.5.3"
-    resolved "https://registry.yarnpkg.com/semver/-/semver-7.5.3.tgz#161ce8c2c6b4b3bdca6caadc9fa3317a4c4fe88e"
-    integrity sha512-QBlUtyVk/5EeHbi7X0fw6liDZc7BBmEaSYn01fMU1OUYbf6GPsbTtd8WmnqbI20SeycoHSeiybkE/q1Q+qlThQ==
+    version "7.5.4"
+    resolved "https://registry.yarnpkg.com/semver/-/semver-7.5.4.tgz#483986ec4ed38e1c6c48c34894a9182dbff68a6e"
+    integrity sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==
     dependencies:
       lru-cache "^6.0.0"
   

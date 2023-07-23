@@ -1,4 +1,4 @@
-POST http://localhost:5050/api/product
+POST http://localhost:3306/api/product
 Content-Type: application/json
 
 {
@@ -22,7 +22,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:5050/api/product/
+GET http://localhost:3306/api/product/
 
 ###
 PATCH  http://localhost:5050/api/product/1
