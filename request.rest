@@ -1,0 +1,52 @@
+POST http://localhost:5050/api/product
+Content-Type: application/json
+
+{
+    "title": "rumah disewa",
+    "price": "1jt/Bulan",
+    "descriptions":"dasfas",
+    "lt":"2000meter",
+    "lb": "2000meter",
+    "kt": 4,
+    "km": 2,
+    "area": "jakarta selatan",
+    "kredit": "500.000/jam",
+    "carport": 1,
+    "typeProperty": "rumah", 
+    "sertificate": "N/A",
+    "electrical": "2000Khw",
+    "floor": 3,
+    "conditionProperty": "bagus",
+    "conditionFurnished": "nonfurnished",
+    "potition": "timur"
+}
+
+###
+GET http://localhost:5050/api/product/
+
+###
+PATCH  http://localhost:5050/api/product/1
+Content-Type: application/json
+
+{
+    "title": "rumah dijual123",
+    "price": "2jt/Bulan",
+    "descriptions":"dasfas",
+    "lt":"2000meter",
+    "lb": "2000meter",
+    "kt": 4,
+    "km": 2,
+    "area": "jakarta timur",
+    "kredit": "500.000/jam",
+    "carport": 1,
+    "typeProperty": "rumah", 
+    "sertificate": "N/A",
+    "electrical": "2000Khw",
+    "floor": 3,
+    "conditionProperty": "bagus",
+    "conditionFurnished": "nonfurnished",
+    "potition": "timur"
+}
+
+###
+DELETE http://localhost:5050/api/product
