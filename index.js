@@ -18,7 +18,7 @@ const port = process.env.DB_PORT;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors(handleCors));
+app.use(handleCors);
 
 app.use("/", productRoutes);
 
