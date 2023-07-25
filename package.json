@@ -4,8 +4,10 @@
   "type": "module",
   "description": "",
   "main": "index.js",
-  "extends": ["config:recommended", ":dependencyDashboardApproval"],
-  
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboardApproval"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./index.js",
@@ -20,5 +22,8 @@
     "mysql2": "^3.5.2",
     "nodemon": "^3.0.1",
     "sequelize": "^6.32.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13"
   }
 }
