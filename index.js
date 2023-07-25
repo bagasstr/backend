@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: "*", // Atur domain yang diizinkan
-    methods: [GET, PUT, POST, DELETE], // Atur metode HTTP yang diizinkan
+    methods: ["GET", "PUT", "POST", "DELETE"], // Atur metode HTTP yang diizinkan
     optionsSuccessStatus: 200, // Atur kode status untuk opsi pra-penerbangan (Preflight)
     credentials: false, // Izinkan pengiriman kredensial (cookie, header otentikasi, dll.)
   })
