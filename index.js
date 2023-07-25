@@ -1,7 +1,7 @@
 import express from "express";
 // import koneksi from "./config/database.js";
 // import Product from "./models/productModels.js";
-// import cors from "cors";
+import cors from "cors";
 import productRoutes from "./routes/productRoutes.js";
 import { handleCors } from "./middleware/productMiddle.js";
 
@@ -18,7 +18,7 @@ const port = process.env.DB_PORT;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(handleCors);
+app.use(cors());
 
 app.use("/", productRoutes);
 
